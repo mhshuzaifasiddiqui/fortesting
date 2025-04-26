@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.section{
+    min-height: 50vh;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s ease-out;
+}
+
+.section:nth-child(even) {
+    background-color: red;
+}
+
+.section:nth-child(odd){
+
+    background-color: blue;
+}
+
+/* class selectors were second,third,fourth but it should two,three and four */
+.two,
+.three,
+.four{
+    transform: translateX(-100%);
+}
+    </style>
+</head>
+<body>
+    <div class="section first" id="one">section 1</div>
+    <div class="section two" id="two">section 2</div>
+    <div class="section three" id="three">section 3</div>
+    <div class="section four" id="four">section 4</div>
+
+</body>
+<script>
+
+window.addEventListener('scroll', function() {
+            if (scrollY >= 300) {
+            document.getElementById("two").style.transform ="translate(0)";    
+            } else{
+                document.getElementById("two").style.transform ="translateX (-100%)";
+            }
+            if (scrollY >= 500) {
+            document.getElementById("three").style.transform ="translate(0)";    
+            } else{
+                document.getElementById("three").style.transform ="translateX (-100%)";
+            }
+            if (scrollY >= 650) {
+            document.getElementById("four").style.transform ="translate(0)";    
+            } else{
+                document.getElementById("four").style.transform ="translateX (-100%)";
+            }
+
+
+        });
+    </script>
+
+
+
+</html>
